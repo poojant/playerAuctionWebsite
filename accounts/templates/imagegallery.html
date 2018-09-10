@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>SLSPL Auction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+.card{
+	height: 400px;
+	width: 320px;
+	margin-bottom: 10px;
+
+}
+</style>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="http://127.0.0.1:8000/accounts/auction/">SLSPL Auction Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="https://fantasy.iplt20.com/">Fantasy Site <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="http://127.0.0.1:8000/accounts/imagegallery/">Gallery<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a class="btn btn-outline-success my-2 my-sm-0" href="http://127.0.0.1:8000/accounts/logout/">Logout</a>
+    </form>
+  </div>
+</nav>
+
+	<br>
+	<br>
+	{% load static %}
+	<div class="container">
+		<div class="row">
+		{% for images in image %}
+			<div class="col-lg-4 col-sm-4 card bg-light">
+				<img class="card-img img-responsive" style="height:350px; width:290px; margin-left:20px"src="/static/{{ images.img }}">
+				<div class="card-block">
+					<h3 style="text-align: center;" class="card-title text-secondary">{{images.img}}</h3>
+				</div>
+				</a>
+			</div>
+		
+		{% endfor %}
+		</div><br>
+	</div>
+</body	
+</html>
